@@ -64,9 +64,9 @@ const Hero = () => {
           </div>
 
           <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight text-[var(--text-heading)] sm:text-5xl lg:text-6xl">
-            Designing clean,
+            Building complete,,
             <span className="block bg-gradient-to-r from-[var(--accent-dark)] via-[var(--text-heading)] to-[var(--accent-main)] bg-clip-text text-transparent">
-              modern web interfaces.
+               modern web applications.
             </span>
           </h1>
 
