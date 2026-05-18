@@ -2,7 +2,7 @@ import "./globals.css";
 import "lenis/dist/lenis.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
-const siteUrl = "https://deepanshu-portfolio.vercel.app";
+const siteUrl = "https://portfolio-y9sn.vercel.app";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),

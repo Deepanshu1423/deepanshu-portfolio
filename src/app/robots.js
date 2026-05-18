@@ -1,4 +1,4 @@
-const siteUrl = "https://deepanshu-portfolio.vercel.app";
+const siteUrl = "https://portfolio-y9sn.vercel.app";
 
 export default function robots() {
   return {
