@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
 import { BsArrowUpRight } from "react-icons/bs";
+import MagneticWrapper from "@/components/MagneticWrapper";
+import TextReveal from "@/components/TextReveal";
+import ParallaxGlow from "@/components/ParallaxGlow";
 import {
   SiReact,
   SiNextdotjs,
@@ -33,17 +36,24 @@ const Hero = () => {
       {/* Soft grid */}
       <div className="absolute inset-0 opacity-[0.28] [background-image:linear-gradient(to_right,rgba(196,122,36,0.18)_1px,transparent_1px),linear-gradient(to_bottom,rgba(196,122,36,0.18)_1px,transparent_1px)] [background-size:76px_76px]" />
 
-      {/* Floating warm glow */}
-      <motion.div
-        animate={{ y: [0, 28, 0], x: [0, 18, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-8 top-36 h-72 w-72 rounded-full bg-[var(--accent-light)]/45 blur-3xl"
+     
+      {/* Scroll based parallax glow */}
+      <ParallaxGlow
+        speed={130}
+        direction="down"
+        className="left-8 top-36 h-72 w-72 bg-[var(--accent-light)]/45"
+      />
+
+      <ParallaxGlow
+        speed={110}
+        direction="up"
+        className="bottom-12 right-10 h-80 w-80 bg-[var(--accent-main)]/20"
       />
 
       <motion.div
-        animate={{ y: [0, -25, 0], x: [0, -18, 0] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-12 right-10 h-80 w-80 rounded-full bg-[var(--accent-main)]/20 blur-3xl"
+        animate={{ scale: [1, 1.08, 1], opacity: [0.45, 0.65, 0.45] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent-soft)]/45 blur-3xl"
       />
 
       <div className="relative z-10 mx-auto grid min-h-[calc(100svh-6rem)] max-w-7xl items-center gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
@@ -63,12 +73,12 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight text-[var(--text-heading)] sm:text-5xl lg:text-6xl">
-            Building complete,
-            <span className="block bg-gradient-to-r from-[var(--accent-dark)] via-[var(--text-heading)] to-[var(--accent-main)] bg-clip-text text-transparent">
-               modern web applications.
-            </span>
-          </h1>
+          <TextReveal
+            text="Building complete, modern web applications."
+            highlightWords={["modern", "web", "applications"]}
+            className="max-w-4xl text-3xl font-black leading-tight tracking-tight text-[var(--text-heading)] sm:text-5xl lg:text-6xl"
+            highlightClassName="bg-gradient-to-r from-[var(--accent-dark)] via-[var(--text-heading)] to-[var(--accent-main)] bg-clip-text text-transparent"
+          />
 
           <p className="mt-4 hidden max-w-2xl text-sm leading-7 text-[var(--text-muted)] sm:mt-6 sm:block sm:text-lg">
             Hi, I&apos;m{" "}
@@ -81,41 +91,49 @@ const Hero = () => {
           </p>
 
           <div className="mt-5 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
-            <a
-              href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-[var(--bg-dark)] px-5 py-3 text-xs font-bold text-white shadow-xl shadow-[var(--shadow-brown)] transition hover:bg-[var(--accent-main)] sm:px-6 sm:text-sm"
-            >
-              View Projects
-              <BsArrowUpRight className="transition group-hover:-translate-y-1 group-hover:translate-x-1" />
-            </a>
+            <MagneticWrapper>
+              <a
+                href="#projects"
+                className="group inline-flex items-center gap-2 rounded-full bg-[var(--bg-dark)] px-5 py-3 text-xs font-bold text-white shadow-xl shadow-[var(--shadow-brown)] transition hover:bg-[var(--accent-main)] sm:px-6 sm:text-sm"
+              >
+                View Projects
+                <BsArrowUpRight className="transition group-hover:-translate-y-1 group-hover:translate-x-1" />
+              </a>
+            </MagneticWrapper>
 
-            <a
-              href="/resume.pdf"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--accent-light)] bg-white/85 px-5 py-3 text-xs font-bold text-[var(--text-heading)] shadow-sm shadow-[var(--shadow-brown)] backdrop-blur-md transition hover:border-[var(--accent-main)] hover:text-[var(--accent-main)] sm:px-6 sm:text-sm"
-            >
-              <HiOutlineDownload className="text-lg" />
-              Resume
-            </a>
+            <MagneticWrapper strength={0.18}>
+              <a
+                href="/resume.pdf"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--accent-light)] bg-white/85 px-5 py-3 text-xs font-bold text-[var(--text-heading)] shadow-sm shadow-[var(--shadow-brown)] backdrop-blur-md transition hover:border-[var(--accent-main)] hover:text-[var(--accent-main)] sm:px-6 sm:text-sm"
+              >
+                <HiOutlineDownload className="text-lg" />
+                Resume
+              </a>
+            </MagneticWrapper>
           </div>
 
           <div className="mt-6 hidden items-center gap-3 sm:flex sm:mt-8 sm:gap-4">
-            <a
-              href="https://github.com/Deepanshu1423"
-              target="_blank"
-              rel="noreferrer"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--accent-light)] bg-white text-[var(--text-heading)] shadow-sm shadow-[var(--shadow-brown)] transition hover:border-[var(--bg-dark)] hover:bg-[var(--bg-dark)] hover:text-white hover:shadow-md"
-            >
-              <FaGithub />
-            </a>
+            <MagneticWrapper strength={0.2}>
+              <a
+                href="https://github.com/Deepanshu1423"
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--accent-light)] bg-white text-[var(--text-heading)] shadow-sm shadow-[var(--shadow-brown)] transition hover:border-[var(--bg-dark)] hover:bg-[var(--bg-dark)] hover:text-white hover:shadow-md"
+              >
+                <FaGithub />
+              </a>
+            </MagneticWrapper>
 
-            <a
-              href="https://www.linkedin.com/in/deepanshu-pal-9391b422b"
-              target="_blank"
-              rel="noreferrer"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--accent-light)] bg-white text-[var(--text-heading)] shadow-sm shadow-[var(--shadow-brown)] transition hover:border-[var(--accent-main)] hover:bg-[var(--accent-main)] hover:text-white hover:shadow-md"
-            >
-              <FaLinkedinIn />
-            </a>
+            <MagneticWrapper strength={0.2}>
+              <a
+                href="https://www.linkedin.com/in/deepanshu-pal-9391b422b"
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--accent-light)] bg-white text-[var(--text-heading)] shadow-sm shadow-[var(--shadow-brown)] transition hover:border-[var(--accent-main)] hover:bg-[var(--accent-main)] hover:text-white hover:shadow-md"
+              >
+                <FaLinkedinIn />
+              </a>
+            </MagneticWrapper>
           </div>
 
           <div className="mt-10 hidden flex-wrap gap-3 sm:flex">
@@ -135,7 +153,6 @@ const Hero = () => {
           </div>
         </motion.div>
 
-       
         {/* Right Circular Photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92, x: 40 }}

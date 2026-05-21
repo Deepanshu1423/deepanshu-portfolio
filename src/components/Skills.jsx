@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import TextReveal from "@/components/TextReveal";
 import {
   SiReact,
   SiNextdotjs,
@@ -63,9 +64,12 @@ const Skills = () => {
             Skills
           </p>
 
-          <h2 className="text-4xl font-black tracking-tight text-[var(--text-heading)] sm:text-5xl">
-            Technologies I use to build modern web apps.
-          </h2>
+          <TextReveal
+            text="Technologies I use to build modern web apps."
+            highlightWords={["modern", "web", "apps"]}
+            className="text-4xl font-black tracking-tight text-[var(--text-heading)] sm:text-5xl"
+            highlightClassName="text-[var(--accent-main)]"
+          />
 
           <p className="mt-5 text-base leading-8 text-[var(--text-muted)] sm:text-lg">
             My skill set covers frontend development, backend API development

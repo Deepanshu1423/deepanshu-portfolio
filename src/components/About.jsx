@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BsArrowUpRight } from "react-icons/bs";
+import TextReveal from "@/components/TextReveal";
 
 const highlights = [
   {
@@ -39,9 +40,12 @@ const About = () => {
             About Me
           </p>
 
-          <h2 className="text-4xl font-black tracking-tight text-[var(--text-heading)] sm:text-5xl">
-            I build websites that look clean and work smoothly.
-          </h2>
+          <TextReveal
+            text="I build websites that look clean and work smoothly."
+            highlightWords={["clean", "smoothly"]}
+            className="text-4xl font-black tracking-tight text-[var(--text-heading)] sm:text-5xl"
+            highlightClassName="text-[var(--accent-main)]"
+          />
 
           <p className="mt-5 text-base leading-8 text-[var(--text-muted)] sm:text-lg">
             I&apos;m Deepanshu Pal, a React / MERN Stack Developer with

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
+import ProjectTiltCard from "@/components/ProjectTiltCard";
+import TextReveal from "@/components/TextReveal";
 
 const projects = [
   {
@@ -63,9 +65,12 @@ const Projects = () => {
             Projects
           </p>
 
-          <h2 className="text-4xl font-black tracking-tight text-[var(--text-heading)] sm:text-5xl">
-            Real projects built with modern web technologies.
-          </h2>
+          <TextReveal
+            text="Real projects built with modern web technologies."
+            highlightWords={["projects", "modern", "web"]}
+            className="text-4xl font-black tracking-tight text-[var(--text-heading)] sm:text-5xl"
+            highlightClassName="text-[var(--accent-main)]"
+          />
 
           <p className="mt-5 text-base leading-8 text-[var(--text-muted)] sm:text-lg">
             These projects show my frontend, backend, database, UI design and
@@ -75,14 +80,7 @@ const Projects = () => {
 
         <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 35 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.65, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-[2rem] border border-white bg-white/85 p-6 shadow-xl shadow-[var(--shadow-brown)] backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-[var(--shadow-brown)]"
-            >
+            <ProjectTiltCard key={project.title} index={index}>
               <div className="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-gradient-to-br from-[var(--accent-light)]/50 to-[var(--accent-main)]/30 blur-2xl transition group-hover:scale-125" />
 
               <div className="relative z-10">
@@ -153,7 +151,7 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </ProjectTiltCard>
           ))}
         </div>
       </div>
