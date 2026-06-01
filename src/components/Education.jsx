@@ -140,7 +140,7 @@ const Education = () => {
                 </a>
 
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="group flex items-center justify-between rounded-2xl border border-[var(--accent-light)] bg-white px-5 py-4 text-sm font-black text-[var(--text-heading)] transition hover:border-[var(--accent-main)] hover:text-[var(--accent-main)]"
                 >
                   <span className="flex items-center gap-3">

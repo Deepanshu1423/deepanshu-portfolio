@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 md:flex-row">
         <div>
           <a
-            href="#home"
+            href="/"
             className="flex items-center justify-center gap-3 text-lg font-black tracking-tight text-white md:justify-start"
           >
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[var(--accent-light)] to-[var(--accent-main)] text-sm font-black text-[var(--bg-dark)]">

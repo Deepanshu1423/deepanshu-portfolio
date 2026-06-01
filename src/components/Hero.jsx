@@ -93,7 +93,7 @@ const Hero = () => {
           <div className="mt-5 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
             <MagneticWrapper>
               <a
-                href="#projects"
+                href="/projects"
                 className="group inline-flex items-center gap-2 rounded-full bg-[var(--bg-dark)] px-5 py-3 text-xs font-bold text-white shadow-xl shadow-[var(--shadow-brown)] transition hover:bg-[var(--accent-main)] sm:px-6 sm:text-sm"
               >
                 View Projects
