@@ -6,15 +6,15 @@ import ProjectTiltCard from "@/components/ProjectTiltCard";
 import TextReveal from "@/components/TextReveal";
 
 const projects = [
-  {
-    title: "School Feedback System",
-    category: "Full Stack Project",
-    desc: "A real-world parent-teacher feedback system where parents submit feedback, teachers respond, and admin manages school data.",
-    tech: ["React", "Node.js", "Express", "MySQL", "JWT"],
-    highlight: "Parent, Teacher and Admin modules",
-    github: "https://github.com/Deepanshu1423",
-    live: "",
-  },
+ {
+  title: "School Feedback System",
+  category: "Full Stack Project",
+  desc: "A real-world parent-teacher feedback system where parents submit feedback, teachers respond, and admin manages school data.",
+  tech: ["React", "Node.js", "Express", "MySQL", "JWT"],
+  highlight: "Parent, Teacher and Admin modules",
+  github: "https://github.com/Deepanshu1423",
+  live: "https://school-feedback-eight.vercel.app/",
+},
   {
     title: "Safar Junction Travel Website",
     category: "Frontend Website",
@@ -33,15 +33,17 @@ const projects = [
     github: "https://github.com/Deepanshu1423",
     live: "",
   },
-  {
-    title: "Next.js To-Do CRUD App",
-    category: "Next.js Project",
-    desc: "A CRUD-based to-do application built with Next.js, API routes, MySQL database and clean task management flow.",
-    tech: ["Next.js", "MySQL", "API Routes", "Tailwind"],
-    highlight: "Create, read, update and delete tasks",
-    github: "https://github.com/Deepanshu1423",
-    live: "",
-  },
+ {
+  title: "WorkSync HRMS",
+  category: "Full Stack Project",
+  desc: "A production-ready HRMS for managing employees, geo-based attendance, tasks, projects, reports, and dashboard analytics.",
+  tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Prisma", "JWT"],
+  highlight: "Employee, Attendance, HR/Admin and Manager modules",
+  github: "https://github.com/Deepanshu1423/worksync-hrms.git",
+  live: "https://worksync-hrms-web.vercel.app/",
+},
+
+
 ];
 
 const Projects = () => {

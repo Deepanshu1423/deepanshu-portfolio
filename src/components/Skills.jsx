@@ -39,7 +39,7 @@ const skillGroups = [
   },
   {
     title: "Database",
-    items: "MySQL, MongoDB, Database Tables, Relations, CRUD Operations",
+    items: "MySQL, MongoDB, PostgreSQL, Database Tables, Relations, CRUD Operations",
   },
 ];
 
