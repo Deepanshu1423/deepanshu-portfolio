@@ -128,7 +128,7 @@ const Education = () => {
 
               <div className="mt-8 grid gap-4">
                 <a
-                  href="/resume.pdf"
+                  href="/Deepanshuresume_Software%20developer.pdf"
                   className="group flex items-center justify-between rounded-2xl bg-[var(--bg-dark)] px-5 py-4 text-sm font-black text-white shadow-xl shadow-[var(--shadow-brown)] transition hover:bg-[var(--accent-main)]"
                 >
                   <span className="flex items-center gap-3">

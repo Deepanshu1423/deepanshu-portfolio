@@ -6,6 +6,16 @@ import ProjectTiltCard from "@/components/ProjectTiltCard";
 import TextReveal from "@/components/TextReveal";
 
 const projects = [
+  {
+    title: "ExploreYatri Travel Agency",
+    category: "Travel Agency Website",
+    desc: "A travel agency website that introduces ExploreYatri and helps travelers connect with the agency to plan their next trip.",
+    tech: [],
+    highlight: "Travel agency website with a custom domain",
+    github: "https://github.com/Deepanshu1423/exploreyatri.git",
+    live: "https://www.exploreyatri.com/",
+    alternateLive: "https://exploreyatri.vercel.app/",
+  },
  {
   title: "School Feedback System",
   category: "Full Stack Project",
@@ -133,6 +143,17 @@ const Projects = () => {
                   {project.desc}
                 </p>
 
+                {project.alternateLive && (
+                  <a
+                    href={project.alternateLive}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-block text-sm font-bold text-[var(--accent-dark)] underline underline-offset-4 transition hover:text-[var(--accent-main)]"
+                  >
+                    Also available on Vercel
+                  </a>
+                )}
+
                 <div className="mt-5 rounded-2xl border border-[var(--accent-light)]/70 bg-[var(--bg-main)] p-4">
                   <p className="text-sm font-bold text-[var(--accent-dark)]">
                     Project Highlight
@@ -142,7 +163,8 @@ const Projects = () => {
                   </p>
                 </div>
 
-                <div className="mt-5 flex flex-wrap gap-2">
+                {project.tech.length > 0 && (
+                  <div className="mt-5 flex flex-wrap gap-2">
                   {project.tech.map((item) => (
                     <span
                       key={item}
@@ -151,7 +173,8 @@ const Projects = () => {
                       {item}
                     </span>
                   ))}
-                </div>
+                  </div>
+                )}
               </div>
             </ProjectTiltCard>
           ))}

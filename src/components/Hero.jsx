@@ -103,7 +103,7 @@ const Hero = () => {
 
             <MagneticWrapper strength={0.18}>
               <a
-                href="/resume.pdf"
+                href="/Deepanshuresume_Software%20developer.pdf"
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--accent-light)] bg-white/85 px-5 py-3 text-xs font-bold text-[var(--text-heading)] shadow-sm shadow-[var(--shadow-brown)] backdrop-blur-md transition hover:border-[var(--accent-main)] hover:text-[var(--accent-main)] sm:px-6 sm:text-sm"
               >
                 <HiOutlineDownload className="text-lg" />
